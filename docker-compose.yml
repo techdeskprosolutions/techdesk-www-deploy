@@ -4,12 +4,12 @@ services:
   web:
     image: php:8.2-apache
     container_name: login-test-web
-    ports:
-      - "8082:80"                    # You can access it on port 8082 for now
+    # ports:                    # ← Comment this out or remove it
+    #   - "8082:80"
     volumes:
       - ./html:/var/www/html
     networks:
-      - panel_panel_net              # ← Use your actual network
+      - panel_panel_net
 
 networks:
   panel_panel_net:
