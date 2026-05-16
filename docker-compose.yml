@@ -4,13 +4,8 @@ services:
   web:
     image: php:8.2-apache
     container_name: login-test-web
-    # ports:                    # ← Comment this out or remove it
-    #   - "8082:80"
+    user: "www-data"
     volumes:
       - ./html:/var/www/html
     networks:
       - panel_panel_net
-
-networks:
-  panel_panel_net:
-    external: true
