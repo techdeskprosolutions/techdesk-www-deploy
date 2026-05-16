@@ -5,13 +5,12 @@ services:
     image: php:8.2-apache
     container_name: login-test-web
     ports:
-      - "8082:80"          # ← Changed from 8080 to 8082
+      - "8082:80"                    # You can access it on port 8082 for now
     volumes:
       - ./html:/var/www/html
     networks:
-      - your-existing-network   # ← Important: join your current network
-    # depends_on is optional if DB is already running
+      - panel_panel_net              # ← Use your actual network
 
 networks:
-  your-existing-network:
-    external: true          # ← Use your actual network name here
+  panel_panel_net:
+    external: true
